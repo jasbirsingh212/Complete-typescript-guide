@@ -7,5 +7,4 @@ axios
   })
   .catch((error) => {
     console.error("Failed to fetch todo:", error.message);
-    process.exitCode = 1;
   });
