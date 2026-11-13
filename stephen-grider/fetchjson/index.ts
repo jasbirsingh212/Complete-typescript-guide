@@ -13,6 +13,7 @@ axios
     const id = todo.id;
     const title = todo.title;
     const completed = todo.completed;
+    //const userid = todo.userId; // This line is added to extract the userId property
 
     logTodo(id, title, completed);
   })
