@@ -2,10 +2,10 @@ let apples: number = 5;
 let speed: string = "fast";
 let hasName: boolean = true;
 
-//=========Type Inference
+//=========Type Inference====================================================
 let firstName  = "John";
 //firstName = 30"; // Error: Type 'number' is not assignable to type 'string'.
-//=====================
+//=============================================================================
 
 //speed = 10;
 //apples = "five";
@@ -50,3 +50,10 @@ let point: { x: number; y: number } = {
 const logNumber: (i: number) => void = (i: number) => {
   console.log(i);
 };
+
+
+//===================When to use Type Inference====================================================
+let firstName1 ;
+// firstName1 = "John";
+//firstName1 = 30; // No error, type inference is not applied here because the variable was not initialized with a value.
+//=============================================================================
