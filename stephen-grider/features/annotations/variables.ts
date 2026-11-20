@@ -57,3 +57,30 @@ let firstName1 ;
 // firstName1 = "John";
 //firstName1 = 30; // No error, type inference is not applied here because the variable was not initialized with a value.
 //=============================================================================
+
+
+//===================When to use Annotations====================================================
+//1) Function that returns the 'any' type
+const json = '{"x": 10, "y": 20}';
+//const coordinates = JSON.parse(json);
+//coordinates.abc(); // No error, because the type of coordinates is any, and any type allows any property to be accessed on it.
+
+// Error: Type 'any' is not assignable to type '{ x: number; y: number; }'.
+// To fix this error, we can add a type annotation to the coordinates variable to specify that it should be of type { x: number; y: number; }.
+const coordinates: { x: number; y: number } = JSON.parse(json);
+
+let lastName;// any value can be assigned to this variable, but it is not recommended to use any type in TypeScript. It is better to use a specific type or an interface to define the shape of the object.
+//===================================================================================
+
+//2) When we declare a variable on one line and initialize it later
+let words: string[];
+words = ["red", "green", "blue"];
+let foundWord: boolean;
+//let foundWord1: boolean = false;// better approach to initialize the variable with a default value to avoid undefined behavior.
+
+for (let i = 0; i < words.length; i++) {
+  if (words[i] === "green") {
+    foundWord = true;
+  }
+}
+//===================================================================================
