@@ -84,3 +84,16 @@ for (let i = 0; i < words.length; i++) {
   }
 }
 //===================================================================================
+
+//3) Variable whose type cannot be inferred correctly
+const numbers = [-10, -1, 12];
+//let numberAboveZero = false;
+// with type inference, the type of numberAboveZero will be inferred as boolean, which is not correct because we want to store a number in it if we find one above zero.
+//  Therefore, we need to add a type annotation to specify that it can be either a boolean or a number.
+let numberAboveZero: boolean | number = false;
+
+for (let i = 0; i < numbers.length; i++) {
+  if (numbers[i] > 0) {
+    numberAboveZero = numbers[i];
+  } 
+}
