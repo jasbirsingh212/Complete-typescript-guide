@@ -84,6 +84,24 @@ const logUser = ({
 
 logUser(user);
 
+
+//============= Default Parameters with Annotations===========================
+
+const greet = (name: string = "Guest"): string => {
+  return `Hello, ${name}!`;
+};
+
+//=============Destructuring with default parameters and type annotations===========================
+const logUserWithDefaults = ({
+  id = 0,
+  name = "Unknown",
+  email = ""}: { id: number; name: string; email: string }): void => {
+  console.log(id);
+  console.log(name);
+  console.log(email);
+}
+
+logUserWithDefaults({ id: 1, name: "John Doe", email: "john.doe@example.com" });
 //============================ Annotation with Objects===========================
 
 const profile = {
