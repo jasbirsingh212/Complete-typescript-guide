@@ -24,3 +24,23 @@ function divide(a: number, b: number): number {
 const multiply = function(a: number, b: number): number {
     return a * b;
 }
+
+//===================void and nerver types in functions===========================
+
+function logMessage(message: string): void {
+    console.log(message);
+
+    // The function does not return any value, so its return type is void.
+    // This is useful for functions that perform side effects, such as logging or updating the UI.
+    // This function can return null or undefined, but it cannot return any other value. 
+    // with void function finishing execution, it will return undefined by default.
+}
+
+
+function throwError(message: string): never {
+    throw new Error(message);   
+    // The function never returns a value, so its return type is never.
+    // This is useful for functions that always throw an error or terminate the program.
+    // This function cannot return any value, not even null or undefined.
+    // with never function finishing execution, it will not return anything and will terminate the program.        
+}
